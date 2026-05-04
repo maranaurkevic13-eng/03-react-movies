@@ -7,7 +7,7 @@ interface MovieResponse {
     results: Movie[];
 }
 
-export const fetchMovies = async (query: string) => {
+export const fetchMovies = async (query: string): Promise<Movie[]> => {
     const {data} = await axios.get<MovieResponse>(BASE_URL, {
         params: {query},
         headers: {
